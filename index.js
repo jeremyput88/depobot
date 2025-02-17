@@ -4,7 +4,9 @@ const ethers = require('ethers')
 const { BigNumber, utils } = ethers
 
 const provider = new ethers.providers.WebSocketProvider(
-  `wss://api.zan.top/node/ws/v1/eth/mainnet/390a5d41bc0e4cc8957e2f827776cbc8')
+  `wss://api.zan.top/node/ws/v1/eth/mainnet/${process.env.INFURA_ID}`,
+  'rinkeby',
+)
 
 const depositWallet = new ethers.Wallet(
   process.env.DEPOSIT_WALLET_PRIVATE_KEY,
